@@ -40,7 +40,8 @@ def parse_arguments():
                       help='GCS path or local path of training data.')
   parser.add_argument('--tf-model-dir',
                       type=str,
-                      help='GCS path or local directory.')
+                      help='GCS path or local directory.'
+                      default='/model/')
   parser.add_argument('--tf-export-dir',
                       type=str,
                       default='mnist/',
