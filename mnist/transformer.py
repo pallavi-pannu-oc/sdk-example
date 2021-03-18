@@ -56,8 +56,8 @@ class ImageTransformer(kfserving.KFModel):
         payload = {"inputs": {'x': x.tolist()}, 'token':inputs['token']}
         return payload
 
-    def postprocess(self, outputs: List) -> List:
-        return outputs['classes']
+    def postprocess(self, prediction: List) -> List:
+        return prediction['outputs']['classes']
 
 if __name__ == "__main__":
     transformer = ImageTransformer(args.model_name, predictor_host=args.predictor_host)
