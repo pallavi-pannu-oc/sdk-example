@@ -30,7 +30,7 @@ import tensorflow as tf
 
 N_DIGITS = 10  # Number of digits.
 X_FEATURE = 'x'  # Name of the input feature.
-
+MODEL_DIR = '/model/'
 
 def parse_arguments():
   parser = argparse.ArgumentParser()
@@ -41,10 +41,10 @@ def parse_arguments():
   parser.add_argument('--tf-model-dir',
                       type=str,
                       help='GCS path or local directory.',
-                      default='/model/')
+                      default=MODEL_DIR)
   parser.add_argument('--tf-export-dir',
                       type=str,
-                      default='mnist/',
+                      default=MODEL_DIR,
                       help='GCS path or local directory to export model')
   parser.add_argument('--tf-model-type',
                       type=str,
